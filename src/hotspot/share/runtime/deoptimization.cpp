@@ -2685,6 +2685,14 @@ const char* Deoptimization::trap_reason_name(int reason) {
   return "unknown";
 }
 
+jint Deoptimization::total_deoptimization_count() {
+  return 0;
+}
+
+jint Deoptimization::deoptimization_count(char *reason_str, char *action_str) {
+  return 0;
+}
+
 void Deoptimization::print_statistics() {
   // no output
 }
