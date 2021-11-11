@@ -2612,7 +2612,7 @@ jint Deoptimization::total_deoptimization_count() {
 // one of 'reason' or 'action' is null, the method returns the sum of all
 // deoptimizations with the specific 'action' or 'reason' respectively.
 // If both arguments are null, the method returns the total deopt count.
-jint Deoptimization::deoptimization_count(char *reason_str, char *action_str) {
+jint Deoptimization::deoptimization_count(const char *reason_str, const char *action_str) {
   if (reason_str == NULL && action_str == NULL) {
     return total_deoptimization_count();
   }

@@ -969,7 +969,7 @@ WB_END
 
 // Get the trap count of a method for a specific reason. If the trap count for
 // that reason did overflow, this includes the overflow trap count of the method.
-// If 'reason' is NULL, only the traps for that specific reason will be returned.
+// If 'reason' is NULL, the sum of the traps for all reasons will be returned.
 // This number includes the overflow trap count if the trap count for any reason
 // did overflow.
 WB_ENTRY(jint, WB_GetMethodTrapCount(JNIEnv* env, jobject o, jobject method, jstring reason_obj))
@@ -1013,9 +1013,9 @@ WB_ENTRY(jint, WB_GetDeoptCount(JNIEnv* env, jobject o, jstring reason_obj, jstr
     return Deoptimization::total_deoptimization_count();
   }
   ResourceMark rm(THREAD);
-  char *reason_str = (reason_obj == NULL) ?
+  const char *reason_str = (reason_obj == NULL) ?
     NULL : java_lang_String::as_utf8_string(JNIHandles::resolve_non_null(reason_obj));
-  char *action_str = (action_obj == NULL) ?
+  const char *action_str = (action_obj == NULL) ?
     NULL : java_lang_String::as_utf8_string(JNIHandles::resolve_non_null(action_obj));
 
   return Deoptimization::deoptimization_count(reason_str, action_str);

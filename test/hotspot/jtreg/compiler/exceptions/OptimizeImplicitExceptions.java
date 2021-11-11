@@ -23,7 +23,7 @@
 
  /*
  * @test
- * @bug 8273563
+ * @bug 8273563 8275908
  * @summary Test -XX:+/-OmitStackTraceInFastThrow and -XX:+/-OptimizeImplicitExceptions
  *
  * @requires vm.compiler2.enabled & vm.compMode != "Xcomp"
