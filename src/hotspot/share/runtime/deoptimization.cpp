@@ -2689,7 +2689,7 @@ jint Deoptimization::total_deoptimization_count() {
   return 0;
 }
 
-jint Deoptimization::deoptimization_count(char *reason_str, char *action_str) {
+jint Deoptimization::deoptimization_count(const char *reason_str, const char *action_str) {
   return 0;
 }
 
