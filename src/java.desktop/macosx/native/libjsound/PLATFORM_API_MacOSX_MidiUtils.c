@@ -255,9 +255,9 @@ INT32 MIDI_Utils_GetDeviceVersion(int direction, INT32 deviceID, char *name, UIN
 }
 
 
-static MIDIClientRef client = (MIDIClientRef) NULL;
-static MIDIPortRef inPort = (MIDIPortRef) NULL;
-static MIDIPortRef outPort = (MIDIPortRef) NULL;
+static MIDIClientRef client = (MIDIClientRef) 0;
+static MIDIPortRef inPort = (MIDIPortRef) 0;
+static MIDIPortRef outPort = (MIDIPortRef) 0;
 
 // Each MIDIPacket can contain more than one midi messages.
 // This function processes the packet and adds the messages to the specified message queue.
@@ -463,7 +463,7 @@ INT32 MIDI_Utils_OpenDevice(int direction, INT32 deviceID, MacMidiDeviceHandle**
     midiInit();
 
     int err = MIDI_ERROR_NONE;
-    MIDIEndpointRef endpoint = (MIDIEndpointRef) NULL;
+    MIDIEndpointRef endpoint = (MIDIEndpointRef) 0;
 
     TRACE0("MIDI_Utils_OpenDevice\n");
 
